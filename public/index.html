@@ -1,13 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Notícias</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fc73fc;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .noticia {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .noticia h2 {
+      margin-top: 0;
+    }
+
+    .btn-carregar {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-carregar:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <h1>Olá mundo</h1>
+
+  <header>
+    <h1>Notícias chocantes</h1>
+  </header>
+
+  <div class="container" id="noticias-container">
+   
+  </div>
+
+  <button class="btn-carregar" id="btn-carregar">Carregar Notícias</button>
+
+  <script>
+    $(document).ready(function() {
+      const noticias = [
+        {
+          titulo: "Ana fica desparecida por três dias, após dormi as 2 horas da manhã",
+          conteudo: "A Ana e tão linda kkkkkkk, mas na noite de ontem ela foi dormi as 2 horas da manhã, dai ela ficou com um rosto de acabada, ela ficou muito triste e sumiu, já faz três dias que ela está desaparecida."
+        },
+        {
+          titulo: "Mulher some após comer uma alface",
+          conteudo: "mulher ficou desaparecida após ter comido no dia uma folha de alface, sua família ficou tão preocupada, que resolvel deixar para lá até que a mulher comeu um pão e apareceu novamente, os policias ficaram surpresos com sua volta inesperada."
+        },
+        {
+          titulo: "minha vo esta conversando comigo enquanto estou fazendo minha atv",
+          conteudo: "Eu estava de boas fazendo atividade dai minha vó chegou do nada, e começou a conversa comigo eu fiquei surpresa mas ta tudo bem ela é estranha mas amo ela kkkkkkk, doida de vez enquando e muito brava vai entender kkkkk eu mesmo tenho um parafuso a menos."
+        }
+      ];
+
+      $('#btn-carregar').click(function() {
+        $('#noticias-container').empty(); 
+        $.each(noticias, function(index, noticia) {
+          $('#noticias-container').append(`
+            <div class="noticia">
+              <h2>${noticia.titulo}</h2>
+              <p>${noticia.conteudo}</p>
+            </div>
+          `);
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
