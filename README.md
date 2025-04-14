@@ -12,9 +12,9 @@ Leia o enunciado completo no Canvas.
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
+- Nome: Ana Clara Rodrigues de souza
+- Matricula: 890322
+- Proposta de projeto escolhida: site de notícias
 - Breve descrição sobre seu projeto:
 
 ## Print da versão responsiva com CSS puro
